@@ -1,0 +1,30 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.bubble--sort{
+  padding-top:20px ;
+  margin: 0 auto;
+  width:30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 350px;
+  justify-content: space-between;
+}
+
+.bubble--sort_interval--panel{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.bubble--sort_buttons--panel{
+  display: flex;
+
+}
+
+.bubble--sort_interval--input{
+  border: 0;
+}
