@@ -1,7 +1,8 @@
 import { BinaryTree } from "./binaryTree";
 import { TraverseType } from "../enums/TraverseType";
+import {ITreeNode} from "../interfaces/ITreeNode";
 
-const testBinaryTree = {
+const testBinaryTree:ITreeNode<number> = {
   value: 6,
   left: {
     value: 2,

@@ -47,7 +47,7 @@ export class BinaryTree<T extends string | number> implements IBinaryTree<T> {
 
   private BFS(tree: ITreeNode<T>): T[] {
     const queue = [tree];
-    const values = [];
+    const values:T[] = [];
 
     while (queue.length > 0) {
       const [node] = queue.splice(0, 1);
@@ -68,7 +68,7 @@ export class BinaryTree<T extends string | number> implements IBinaryTree<T> {
 
   public getColumn(columnOrder: number): T[] {
     const queue: [ITreeNode<T>, number][] = [[this.tree, 0]];
-    const values = [];
+    const values:T[] = [];
 
     while (queue.length > 0) {
       const [[node, order]] = queue.splice(0, 1);

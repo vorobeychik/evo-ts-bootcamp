@@ -1,6 +1,7 @@
 import { BinarySearchTree } from "./binarySearchTree";
+import {ITreeNode} from "../interfaces/ITreeNode";
 
-const testBinaryTree = {
+const testBinaryTree:ITreeNode<number> = {
   value: 6,
   left: {
     value: 2,
