@@ -1,0 +1,17 @@
+{
+  "name": "001-combineredecer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "redux": "^4.1.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
