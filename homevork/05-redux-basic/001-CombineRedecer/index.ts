@@ -8,6 +8,15 @@ type Store<T> = {
   dispatch: (action: Action) => void;
 };
 
+type Reducer<S = any, A extends Action = any> = (
+  state: S | undefined,
+  action: A
+) => S;
+
+type ReducersMapObject<S = any, A extends Action = any> = {
+  [K in keyof S]: Reducer<S[K], A>;
+};
+
 function counterOne(state: number = 0, action: Action) {
   switch (action.type) {
     case "INCREMENT":
@@ -46,9 +55,7 @@ function createStore<T>(reducer: any) {
   return store;
 }
 
-//я знаю что any это очень плохо но я просто не могу придумать как тут правильно орпеделить типы *( был бы очень рад
-//если бы проверяющий мог показать как правильно
-function combineReducers(reducers: any) {
+function combineReducers(reducers: ReducersMapObject) {
   let combined: any = {};
 
   return function (state: any, action: Action) {
@@ -69,7 +76,7 @@ function combineReducers(reducers: any) {
   };
 }
 
-const store = createStore<number>(
+const store = createStore<ReducersMapObject<{counterOne:number,counterTwo:number},Action>>(
   combineReducers({
     counterOne,
     counterTwo,
