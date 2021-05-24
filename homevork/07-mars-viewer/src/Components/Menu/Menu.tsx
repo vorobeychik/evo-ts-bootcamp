@@ -1,9 +1,9 @@
 import React, {useCallback} from 'react';
-import { Button, InputNumber, PageHeader} from 'antd';
+import {Button, InputNumber, PageHeader} from 'antd';
 import {useDispatch, useSelector} from 'react-redux';
-import {changeSol, selectSol, fetchImages} from '../../redux/marsImagesSlice';
+import {changeSol, fetchImages, selectSol} from '../../redux/marsImagesSlice';
 
-import {selectMenuTab, switchMenuTab, MenuTab} from '../../redux/menuTabSlice';
+import {MenuTab, selectMenuTab, switchMenuTab} from '../../redux/menuTabSlice';
 
 type MenuProps = {
   children:React.ReactChild,
@@ -15,11 +15,11 @@ export default function Menu({children}:MenuProps) {
   const menuTab = useSelector(selectMenuTab);
 
   const clickFavouritesHandler = useCallback(() => {
-    dispatch(switchMenuTab());
+    dispatch(switchMenuTab(MenuTab.Favourites));
   }, [dispatch]);
 
   const clickPhotosHandler = useCallback(() => {
-    dispatch(switchMenuTab());
+    dispatch(switchMenuTab(MenuTab.Photos));
   }, [dispatch]);
 
   const inputHandler = useCallback((value:number) => {

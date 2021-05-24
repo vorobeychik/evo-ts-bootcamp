@@ -1,4 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit';
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {RootState} from './store';
 
 export enum MenuTab{
@@ -12,11 +12,11 @@ export const menuTabSlice = createSlice({
   name: 'selectedTab',
   initialState,
   reducers: {
-    switchMenuTab: (state) => {
-      if (state === MenuTab.Photos) {
-        state = MenuTab.Favourites;
-      } else if (state === MenuTab.Favourites) {
+    switchMenuTab: (state, action:PayloadAction<MenuTab>) => {
+      if (action.payload === MenuTab.Photos) {
         state = MenuTab.Photos;
+      } else if (action.payload === MenuTab.Favourites) {
+        state = MenuTab.Favourites;
       }
       return state;
     },

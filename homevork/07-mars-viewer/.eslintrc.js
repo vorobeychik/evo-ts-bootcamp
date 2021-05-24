@@ -12,5 +12,6 @@ module.exports = {
     "@typescript-eslint/object-curly-spacing":"off",
     "@typescript-eslint/space-infix-ops":"off",
     'max-len':'off',
+    "linebreak-style":'off'
   },
 };
