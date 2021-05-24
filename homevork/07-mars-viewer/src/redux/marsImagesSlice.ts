@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {IMarsImage} from '../interfaces/marsImage';
-import {getImages} from '../services/getImages';
 import {RootState} from './store';
 
 export enum Status {
