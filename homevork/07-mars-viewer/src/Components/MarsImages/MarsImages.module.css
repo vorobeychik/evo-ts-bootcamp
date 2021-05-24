@@ -1,0 +1,13 @@
+.imagesContainer{
+    display: grid;
+    justify-items: stretch;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.marsImages{
+    margin-top: 20px;
+    padding: 0 15px 0 15px;
+    text-align: center;
+}
+
