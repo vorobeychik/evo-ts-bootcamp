@@ -1,0 +1,42 @@
+
+.app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game_area{
+    position: relative;
+    width: 500px;
+    height: 500px;
+
+}
+
+.game_cell{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+}
+
+.game_cell_window{
+    background-image: url("./assets/windowl.png");
+    background-size: cover;
+}
+
+.game_cell_wall{
+    background-image: url("./assets/brick-wall.png");
+    background-size: cover;
+}
+
+.cat{
+    width: 50px;
+    height: 50px;
+    background-image: url("./assets/cat.png");
+        background-size: cover;
+    position: absolute;
+    z-index: 3;
+}
+
+.game_score{
+    margin-right: 15px;
+}
