@@ -40,15 +40,3 @@ export class GameCell{
     }
 }
 
-// export type GameAreaType = {
-//     gameArea:GameCellType[],
-//     width:number,
-//     height:number,
-//     getNewGameArea:(width:number,height:number) => GameCellType[]
-// }
-//
-// type GameCellType = {
-//     x:number,
-//     y:number,
-//     isWindow:boolean,
-// }
