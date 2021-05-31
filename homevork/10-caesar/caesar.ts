@@ -1,9 +1,16 @@
+let programArgs = require('./checkArgs')
 
 let arrEn = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 let arrEnUpper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
-export function encode(str:string,shift:number):string{
-    let resultString = str.split('').map((letter) => {
+function encode(str:string,shift:number):string{
+    const myStr = !programArgs.input ? str.slice(0,-2) : str;
+
+    let resultString = myStr.split('').map((letter) => {
+        if(!/[a-zA-Z]/g.test(letter)){
+            return letter
+        }
+
         const isUpper = letter === letter.toUpperCase();
         const arrOfLetters = isUpper ? arrEnUpper : arrEn;
         const letterIndex = arrOfLetters.indexOf(letter);
@@ -15,12 +22,19 @@ export function encode(str:string,shift:number):string{
         return arrOfLetters[(letterIndex + shift) % 26]
     })
 
-    return resultString.join('')
+    const result = resultString.join('') + '\n'
+    return result
 }
 
 
-export function decode(str:string,shift:number):string{
-    let resultString = str.split('').map((letter) => {
+function decode(str:string,shift:number):string{
+    const myStr = !programArgs.input ? str.slice(0,-2)  : str;
+
+    let resultString = myStr.split('').map((letter) => {
+        if(!/[a-zA-Z]/g.test(letter)){
+            return letter
+        }
+
         const isUpper = letter === letter.toUpperCase();
         const arrOfLetters = isUpper ? arrEnUpper : arrEn;
         const letterIndex = arrOfLetters.indexOf(letter);
@@ -37,6 +51,14 @@ export function decode(str:string,shift:number):string{
         return arrOfLetters[index]
     })
 
+    const result = resultString.join('') + '\n'
+    return result
+}
 
-    return resultString.join('')
+
+
+
+module.exports = {
+    encode,
+    decode
 }
