@@ -1,0 +1,23 @@
+.image{
+    object-fit: cover;
+    width: 100%;
+    min-height: 100%;
+}
+
+.imageDescription{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: black;
+    color:white;
+}
+
+.imageContainer{
+    position: relative;
+}
+
+.heartIcon{
+  font-size: 28px!important;
+}
