@@ -34,7 +34,6 @@ export class Importer{
     }
 
     async import(path:string):Promise<Record<string, string>>{
-        console.log('путь',path)
         const file = await readFile(path,"utf8");
         const jsonData = csvjson.toObject(file)
         return prettyjson.render(jsonData);
